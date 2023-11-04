@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=Playpen+Sans:wght@100;200;300;400;500;600;700;800&display=swap');
+
+/* font-family: 'Comic Neue', cursive;
+font-family: 'Playpen Sans', cursive; */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* filter: blur(20px); */
+}
+.loading{
+    height: 50px;
+    width: 50px;
+    border-top: 5px solid white;
+    border-radius: 50%;
+    animation: rotate 1s linear  infinite  ;
+    position: absolute;
+    z-index: 99;
+    display: none;
+}
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+/* For bg image */
+.for-bg-img {
+    width: 100%;
+    height: 100vh;
+    background-image: url(./bgimage.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    z-index: 20;
+    position: relative;
+}
+
+/* For overlay and blur effect */
+.overlay {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .8);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+}
+
+/* For heading */
+.content {
+    position: relative;
+    z-index: 30;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15vh;
+}
+
+.heading {
+    color: rgba(255, 255, 255, 0.774);
+    padding-top: 20px;
+    font-family: 'Playpen Sans', cursive;
+    letter-spacing: 5px;
+    font-size: 40px;
+    text-decoration: underline;
+}
+
+/* For input-output section */
+.input-output-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.input-text{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    align-items: center;
+    justify-content: center;
+}
+.input{
+    width: 90%;
+    background-color: #2b2a2ad5;
+    color: white;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.555) 0px 7px 29px 0px;
+    font-size: 20px;
+    font-family: 'Comic Neue', cursive;
+    resize: none;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.source-lang{
+    background-color:#2b2a2ad5;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    padding: 5px;
+    color: white;
+    width: 45%;
+    height: 30px;
+    text-align: center;
+    font-family: 'Comic Neue', cursive;  
+    font-size: 20px;  
+}
+.source-lang::placeholder{
+    font-size: 15px;
+}
+
+/* For submit button */
+.submit-button-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit{
+    padding: 10px;
+    border-radius: 8px;
+    outline: none;
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    width: 10%;
+    font-family: 'Comic Neue', cursive; 
+    font-size: 15px;
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 50px 100px -20px, rgba(255, 255, 255, 0.3) 0px 30px 60px -30px, rgba(255, 255, 255, 0.35) 0px -2px 6px 0px inset;
+    transition: all ease-in .2s;
+}
+
+.submit:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* For responsiveness */
+
+@media screen and (max-width:1024px) {
+    .heading{
+        font-size: 35px;
+    }
+    .input{
+        height: 200px;
+    }
+    .submit{
+        width: 15%;
+    }
+}
+@media screen and (max-width:750px) {
+    .input{
+        height: 150px;
+        font-size: 15px;
+    }
+    .source-lang{
+        font-size: 15px;
+    }
+    .submit{
+        width: 20%;
+    }
+    .content{
+        margin-top: 4vh;
+    }
+}
+@media screen and (max-width:600px) {
+    .heading{
+        font-size: 30px;
+    }
+}
+@media screen and (max-width:450px) {
+    .heading{
+        font-size: 25px;
+        padding-top: 30px;
+    }
+    .content{
+        gap: 13vh;
+    }
+    .input-output-container{
+        flex-direction: column;
+        gap: 10vh;
+    }
+    .input-text{
+        width: 80%;
+        gap: 5px;
+    }
+    .input{
+        height: 100px;
+        width: 100%;
+    }
+    .source-lang::placeholder{
+        font-size: 13px;
+    }
+    .submit{
+        width: 30%;
+        box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px, rgba(250, 249, 249, 0.12) 0px -12px 30px, rgba(255, 255, 255, 0.12) 0px 4px 6px, rgba(245, 242, 242, 0.17) 0px 12px 13px, rgba(247, 242, 242, 0.09) 0px -3px 5px;
+    }
+}
