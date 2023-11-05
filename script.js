@@ -23,8 +23,8 @@ async function postRequest() {
         }
     }
     
-    let value_of_targetLang = targetLang.value;
-    let value_of_sourceLang = sourceLang.value;
+    let value_of_targetLang = targetLang.value.trim();
+    let value_of_sourceLang = sourceLang.value.trim();
     let text_of_sourceLang=sourceText.value;
     value_of_targetLang = value_of_targetLang.toLowerCase();
     value_of_sourceLang = value_of_sourceLang.toLowerCase();
